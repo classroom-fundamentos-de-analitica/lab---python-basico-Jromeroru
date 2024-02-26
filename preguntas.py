@@ -14,7 +14,13 @@ Utilice el archivo `data.csv` para resolver las preguntas.
 import csv
 
 with open('data.csv','r',encoding='UTF-8') as data:
-    data_reader=csv.reader(data,delimiter=' ')
+    entrada=csv.reader(data,delimiter=' ')
+    lista=list(entrada)
+
+listadef=[]
+for linea in lista:
+    x=linea[0].split("\t")
+    listadef.append(x)
 
 def pregunta_01():
     """
@@ -25,8 +31,8 @@ def pregunta_01():
 
     """
     sum=0
-    for i in data_reader:
-        sum+=int(i[1])
+    for i in listadef:
+        sum+=sum+int(i[1])
     
     return sum
 
